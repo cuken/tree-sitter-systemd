@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "systemd",
+      "camelcase": "Systemd",
+      "title": "Systemd Unit",
+      "scope": "source.systemd",
+      "file-types": [
+        "service,socket,device,mount,automount,swap,target,path,timer,slice"
+      ],
+      "injection-regex": "^systemd$",
+      "class-name": "TreeSitterSystemd"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree Sitter support for UNIX systemd unit files",
+    "authors": [
+      {
+        "name": "10fish",
+        "email": "jokefish@live.com",
+        "url": "https://github.com/10fish"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/10fish/tree-sitter-systemd"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
