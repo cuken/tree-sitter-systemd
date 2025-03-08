@@ -17,10 +17,49 @@ module.exports = grammar({
 
     section: ($) => seq("[", $.section_name, "]"),
 
-    section_name: ($) => /[A-Za-z0-9]+/,
+    section_name: ($) => choice(
+      $.common_section,
+      $.service_section,
+      $.mount_section,
+      $.socket_section,
+      $.timer_section,
+      $.path_section,
+      /[A-Za-z0-9]+/
+    ),
+
+    common_section: ($) => choice(
+      "Unit",
+      "Install"
+    ),
+
+    service_section: ($) => choice(
+      "Service",
+      "Kill",
+      "Restart"
+    ),
+
+    mount_section: ($) => choice(
+      "Mount",
+      "Automount"
+    ),
+
+    socket_section: ($) => choice(
+      "Socket",
+      "SocketActivation"
+    ),
+
+    timer_section: ($) => choice(
+      "Timer",
+      "OnCalendar"
+    ),
+
+    path_section: ($) => choice(
+      "Path",
+      "PathExists"
+    ),
 
     directive: ($) =>
-      seq($.key, optional($.whitespace), "=", optional($.whitespace), $.value),
+      seq($.key, "=", $.value),
 
     key: ($) => /[A-Za-z0-9_]+/,
 

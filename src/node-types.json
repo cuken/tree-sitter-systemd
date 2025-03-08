@@ -15,6 +15,11 @@
     }
   },
   {
+    "type": "common_section",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "directive",
     "named": true,
     "fields": {},
@@ -29,13 +34,19 @@
         {
           "type": "value",
           "named": true
-        },
-        {
-          "type": "whitespace",
-          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "mount_section",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "path_section",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "section",
@@ -51,6 +62,51 @@
         }
       ]
     }
+  },
+  {
+    "type": "section_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "common_section",
+          "named": true
+        },
+        {
+          "type": "mount_section",
+          "named": true
+        },
+        {
+          "type": "path_section",
+          "named": true
+        },
+        {
+          "type": "service_section",
+          "named": true
+        },
+        {
+          "type": "socket_section",
+          "named": true
+        },
+        {
+          "type": "timer_section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service_section",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "socket_section",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -81,11 +137,68 @@
     }
   },
   {
+    "type": "timer_section",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "#",
     "named": false
   },
   {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "Automount",
+    "named": false
+  },
+  {
+    "type": "Install",
+    "named": false
+  },
+  {
+    "type": "Kill",
+    "named": false
+  },
+  {
+    "type": "Mount",
+    "named": false
+  },
+  {
+    "type": "OnCalendar",
+    "named": false
+  },
+  {
+    "type": "Path",
+    "named": false
+  },
+  {
+    "type": "PathExists",
+    "named": false
+  },
+  {
+    "type": "Restart",
+    "named": false
+  },
+  {
+    "type": "Service",
+    "named": false
+  },
+  {
+    "type": "Socket",
+    "named": false
+  },
+  {
+    "type": "SocketActivation",
+    "named": false
+  },
+  {
+    "type": "Timer",
+    "named": false
+  },
+  {
+    "type": "Unit",
     "named": false
   },
   {
@@ -102,10 +215,6 @@
   },
   {
     "type": "key",
-    "named": true
-  },
-  {
-    "type": "section_name",
     "named": true
   },
   {

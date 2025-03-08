@@ -48,8 +48,119 @@
       ]
     },
     "section_name": {
-      "type": "PATTERN",
-      "value": "[A-Za-z0-9]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "common_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "service_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mount_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "socket_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "timer_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "path_section"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[A-Za-z0-9]+"
+        }
+      ]
+    },
+    "common_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Unit"
+        },
+        {
+          "type": "STRING",
+          "value": "Install"
+        }
+      ]
+    },
+    "service_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Service"
+        },
+        {
+          "type": "STRING",
+          "value": "Kill"
+        },
+        {
+          "type": "STRING",
+          "value": "Restart"
+        }
+      ]
+    },
+    "mount_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Mount"
+        },
+        {
+          "type": "STRING",
+          "value": "Automount"
+        }
+      ]
+    },
+    "socket_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Socket"
+        },
+        {
+          "type": "STRING",
+          "value": "SocketActivation"
+        }
+      ]
+    },
+    "timer_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Timer"
+        },
+        {
+          "type": "STRING",
+          "value": "OnCalendar"
+        }
+      ]
+    },
+    "path_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Path"
+        },
+        {
+          "type": "STRING",
+          "value": "PathExists"
+        }
+      ]
     },
     "directive": {
       "type": "SEQ",
@@ -59,32 +170,8 @@
           "name": "key"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "whitespace"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
           "type": "STRING",
           "value": "="
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "whitespace"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
         },
         {
           "type": "SYMBOL",
