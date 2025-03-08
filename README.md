@@ -1,5 +1,7 @@
 # Tree-sitter Systemd
 
+[English🇺🇸](README.md) | [简体中文🇨🇳](README_CN.md)
+
 A Tree-sitter grammar for parsing systemd unit files.
 
 ## Features

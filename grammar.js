@@ -21,10 +21,13 @@ module.exports = grammar({
       $.common_section,
       $.service_section,
       $.mount_section,
+      $.automount_section,
       $.socket_section,
       $.timer_section,
       $.path_section,
-      /[A-Za-z0-9]+/
+      $.slice_section,
+      $.swap_section,
+      $.scope_section,
     ),
 
     common_section: ($) => choice(
@@ -32,40 +35,32 @@ module.exports = grammar({
       "Install"
     ),
 
-    service_section: ($) => choice(
-      "Service",
-      "Kill",
-      "Restart"
-    ),
+    service_section: ($) => "Service",
 
-    mount_section: ($) => choice(
-      "Mount",
-      "Automount"
-    ),
+    mount_section: ($) => "Mount",
 
-    socket_section: ($) => choice(
-      "Socket",
-      "SocketActivation"
-    ),
+    automount_section: ($) => "Automount",
 
-    timer_section: ($) => choice(
-      "Timer",
-      "OnCalendar"
-    ),
+    socket_section: ($) => "Socket",
 
-    path_section: ($) => choice(
-      "Path",
-      "PathExists"
-    ),
+    timer_section: ($) => "Timer",
+
+    path_section: ($) => "Path",
+
+    slice_section: ($) => "Slice",
+
+    swap_section: ($) => "Swap",
+
+    scope_section: ($) => "Scope",
 
     directive: ($) =>
       seq($.key, "=", $.value),
 
     key: ($) => /[A-Za-z0-9_]+/,
 
-    value: ($) => /[^\n#]+/,
+    value: ($) => /.*/,
 
-    comment: ($) => seq("#", optional($.whitespace), /[^\n]*/),
+    comment: ($) => seq("#", /.*/),
 
     blank_line: ($) => /[\s\t]+/,
 
