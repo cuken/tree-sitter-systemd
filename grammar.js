@@ -11,11 +11,13 @@ module.exports = grammar({
   name: "systemd",
 
   rules: {
-    source_file: ($) => repeat($._definition),
+    source_file: ($) => repeat($.section),
 
-    _definition: ($) => choice($.section, $.directive, $.comment, $.blank_line),
+    section: ($) => seq($.section_header, repeat($._definition)),
 
-    section: ($) => seq("[", $.section_name, "]"),
+    _definition: ($) => choice($.directive, $.comment, $.blank_line),
+
+    section_header: ($) => seq("[", $.section_name, "]"),
 
     section_name: ($) => choice(
       $.common_section,

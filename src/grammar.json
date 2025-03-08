@@ -6,16 +6,28 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_definition"
+        "name": "section"
       }
+    },
+    "section": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_header"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_definition"
+          }
+        }
+      ]
     },
     "_definition": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "section"
-        },
         {
           "type": "SYMBOL",
           "name": "directive"
@@ -30,7 +42,7 @@
         }
       ]
     },
-    "section": {
+    "section_header": {
       "type": "SEQ",
       "members": [
         {
