@@ -19,23 +19,26 @@ module.exports = grammar({
 
     section_header: ($) => seq("[", $.section_name, "]"),
 
-    section_name: ($) => choice(
-      $.common_section,
-      $.service_section,
-      $.mount_section,
-      $.automount_section,
-      $.socket_section,
-      $.timer_section,
-      $.path_section,
-      $.slice_section,
-      $.swap_section,
-      $.scope_section,
-    ),
+    section_name: ($) =>
+      choice(
+        $.common_section,
+        $.service_section,
+        $.mount_section,
+        $.automount_section,
+        $.socket_section,
+        $.timer_section,
+        $.path_section,
+        $.slice_section,
+        $.swap_section,
+        $.scope_section,
+        $.container_section,
+        $.pod_section,
+        $.image_section,
+        $.volume_section,
+        $.network_section,
+      ),
 
-    common_section: ($) => choice(
-      "Unit",
-      "Install"
-    ),
+    common_section: ($) => choice("Unit", "Install"),
 
     service_section: ($) => "Service",
 
@@ -53,10 +56,19 @@ module.exports = grammar({
 
     swap_section: ($) => "Swap",
 
+    container_section: ($) => "Container",
+
+    pod_section: ($) => "Pod",
+
+    image_section: ($) => "Image",
+
+    volume_section: ($) => "Volume",
+
+    network_section: ($) => "Network",
+
     scope_section: ($) => "Scope",
 
-    directive: ($) =>
-      seq($.key, "=", $.value),
+    directive: ($) => seq($.key, "=", $.value),
 
     key: ($) => /[A-Za-z0-9_]+/,
 
