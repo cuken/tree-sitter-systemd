@@ -87,11 +87,27 @@
           "named": true
         },
         {
+          "type": "container_section",
+          "named": true
+        },
+        {
+          "type": "image_section",
+          "named": true
+        },
+        {
           "type": "mount_section",
           "named": true
         },
         {
+          "type": "network_section",
+          "named": true
+        },
+        {
           "type": "path_section",
+          "named": true
+        },
+        {
+          "type": "pod_section",
           "named": true
         },
         {
@@ -116,6 +132,10 @@
         },
         {
           "type": "timer_section",
+          "named": true
+        },
+        {
+          "type": "volume_section",
           "named": true
         }
       ]
@@ -175,6 +195,14 @@
     "named": true
   },
   {
+    "type": "container_section",
+    "named": true
+  },
+  {
+    "type": "image_section",
+    "named": true
+  },
+  {
     "type": "key",
     "named": true
   },
@@ -183,7 +211,15 @@
     "named": true
   },
   {
+    "type": "network_section",
+    "named": true
+  },
+  {
     "type": "path_section",
+    "named": true
+  },
+  {
+    "type": "pod_section",
     "named": true
   },
   {
@@ -208,6 +244,10 @@
   },
   {
     "type": "timer_section",
+    "named": true
+  },
+  {
+    "type": "volume_section",
     "named": true
   }
 ]

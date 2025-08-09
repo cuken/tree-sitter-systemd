@@ -101,6 +101,26 @@
         {
           "type": "SYMBOL",
           "name": "scope_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "container_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pod_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "image_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "volume_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "network_section"
         }
       ]
     },
@@ -148,6 +168,26 @@
     "swap_section": {
       "type": "STRING",
       "value": "Swap"
+    },
+    "container_section": {
+      "type": "STRING",
+      "value": "Container"
+    },
+    "pod_section": {
+      "type": "STRING",
+      "value": "Pod"
+    },
+    "image_section": {
+      "type": "STRING",
+      "value": "Image"
+    },
+    "volume_section": {
+      "type": "STRING",
+      "value": "Volume"
+    },
+    "network_section": {
+      "type": "STRING",
+      "value": "Network"
     },
     "scope_section": {
       "type": "STRING",
